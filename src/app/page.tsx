@@ -2,13 +2,8 @@ import Link from "next/link";
 import { productos } from "@/data/productos";
 import { ProductoCard } from "@/components/ProductoCard";
 import { ComoFunciona } from "@/components/ComoFunciona";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import { linkConsultaGeneral } from "@/lib/whatsapp";
-
-const BENEFICIOS = [
-  { titulo: "ENVÍOS", sub: "TODO EL PAÍS" },
-  { titulo: "GARANTÍA", sub: "POR ESCRITO" },
-  { titulo: "ARMADO", sub: "EN EL DÍA" },
-];
 
 const TEXTOS_CINTA = [
   "ARMÁ TU PC A MEDIDA",
@@ -35,49 +30,8 @@ export default function Home() {
         }
       `}</style>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden border-b border-borde bg-[radial-gradient(circle_at_82%_20%,rgba(255,87,34,0.16),transparent_45%),radial-gradient(circle_at_10%_90%,rgba(255,87,34,0.08),transparent_40%)] py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-acento/40 bg-acento/10 px-3 py-1 text-xs font-semibold text-acento">
-              <span className="h-2 w-2 rounded-full bg-acento animate-pulse" /> ENVÍOS A TODO EL PAÍS · GARANTÍA ESCRITA
-            </div>
-
-            <h1 className="titulo-display mt-5 text-5xl leading-[0.95] sm:text-7xl">
-              ARMÁ LA PC <span className="text-acento">QUE REALMENTE QUERÉS</span>
-            </h1>
-
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-tenue sm:text-lg">
-              Computadoras, notebooks, periféricos y componentes. Elegí cada pieza, mirá el total en el momento y
-              cerramos tu compra por WhatsApp.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/armar"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-acento px-7 text-sm font-bold uppercase tracking-wide text-white transition-transform hover:scale-[1.02] active:scale-95"
-              >
-                Armar mi PC →
-              </Link>
-              <Link
-                href="/productos"
-                className="inline-flex h-12 items-center justify-center rounded-md border border-borde px-7 text-sm font-bold uppercase tracking-wide transition-colors hover:border-acento"
-              >
-                Ver catálogo
-              </Link>
-            </div>
-
-            <div className="mt-10 grid grid-cols-3 gap-4 border-t border-borde pt-6">
-              {BENEFICIOS.map((b) => (
-                <div key={b.titulo}>
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-tenue">{b.titulo}</p>
-                  <p className="text-xs font-black uppercase tracking-wide text-foreground">{b.sub}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* HERO: carrusel de banners, sin texto superpuesto */}
+      <HeroCarousel />
 
       {/* CINTA */}
       <div className="overflow-hidden bg-acento py-3 text-white select-none">
