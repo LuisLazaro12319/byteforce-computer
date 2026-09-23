@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { productos } from "@/data/productos";
-import { ProductoCard } from "@/components/ProductoCard";
 import { ComoFunciona } from "@/components/ComoFunciona";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { DestacadosSemana } from "@/components/DestacadosSemana";
 import { linkConsultaGeneral } from "@/lib/whatsapp";
 
 const TEXTOS_CINTA = [
@@ -45,6 +45,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* DESTACADOS DE LA SEMANA */}
+      <DestacadosSemana productos={destacados} />
+
       {/* ARMADOR TEASER */}
       <section className="border-b border-borde bg-superficie/40">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -62,27 +65,6 @@ export default function Home() {
           >
             Ir al armador →
           </Link>
-        </div>
-      </section>
-
-      {/* DESTACADOS */}
-      <section className="px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-acento">El catálogo</p>
-              <h2 className="titulo-display text-3xl sm:text-4xl">Destacados</h2>
-            </div>
-            <Link href="/productos" className="shrink-0 text-sm font-bold uppercase tracking-wider text-tenue transition-colors hover:text-acento">
-              Ver todo ↗
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3">
-            {destacados.map((producto) => (
-              <ProductoCard key={producto.slug} producto={producto} />
-            ))}
-          </div>
         </div>
       </section>
 
