@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProductoPlaceholder } from "@/components/ProductoPlaceholder";
+import { ProductoMedia } from "@/components/ProductoMedia";
 import { CintaAgotado } from "@/components/CintaAgotado";
 import { CintaOferta } from "@/components/CintaOferta";
 import { precio } from "@/lib/formato";
@@ -14,8 +14,8 @@ export function ProductoCard({ producto }: { producto: Producto }) {
       className="group flex flex-col overflow-hidden rounded-xl border border-borde bg-superficie transition-colors hover:border-acento/60"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
-        <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.04]">
-          <ProductoPlaceholder categoria={producto.categoria} nombre={producto.nombre} />
+        <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-[1.04]">
+          <ProductoMedia producto={producto} />
         </div>
         {producto.sinStock && <CintaAgotado />}
         {producto.oferta && !producto.sinStock && <CintaOferta />}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTienda } from "@/context/TiendaContext";
-import { ProductoPlaceholder } from "@/components/ProductoPlaceholder";
+import { ProductoMedia } from "@/components/ProductoMedia";
 import { CintaAgotado } from "@/components/CintaAgotado";
 import { CintaOferta } from "@/components/CintaOferta";
 import { precio } from "@/lib/formato";
@@ -27,8 +27,8 @@ export function FichaProducto({ producto }: { producto: Producto }) {
       <div className="relative overflow-hidden rounded-2xl border border-borde">
         {producto.sinStock && <CintaAgotado />}
         {producto.oferta && !producto.sinStock && <CintaOferta />}
-        <div className="aspect-[4/3]">
-          <ProductoPlaceholder categoria={producto.categoria} nombre={producto.nombre} />
+        <div className="relative aspect-[4/3]">
+          <ProductoMedia producto={producto} />
         </div>
       </div>
 

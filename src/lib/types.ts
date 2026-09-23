@@ -19,6 +19,8 @@ export type Producto = {
   destacado?: boolean;
   oferta?: boolean;
   sinStock?: boolean;
+  /** URL de la foto real del producto. Si falta, se muestra un ícono de referencia. */
+  imagen?: string;
 };
 
 export type Plataforma = "Intel" | "AMD";
