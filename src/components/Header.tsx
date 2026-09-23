@@ -21,7 +21,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-borde bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 min-w-0" aria-label={MARCA.nombre}>
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-acento to-[#a8320f] text-sm font-black text-white">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-white to-neutral-400 text-sm font-black text-black">
             BF
           </span>
           <span className="titulo-display truncate text-sm sm:text-lg">{MARCA.nombre}</span>
@@ -49,7 +49,7 @@ export function Header() {
               <path d="M3 6h18M16 10a4 4 0 0 1-8 0" />
             </svg>
             <span className="hidden tabular-nums sm:inline">{listo ? precio(total) : precio(0)}</span>
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-acento text-[11px] font-bold text-white tabular-nums">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-acento text-[11px] font-bold text-black tabular-nums">
               {listo ? unidades : 0}
             </span>
           </Link>

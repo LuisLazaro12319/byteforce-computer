@@ -34,12 +34,12 @@ export default function Home() {
       <HeroCarousel />
 
       {/* CINTA */}
-      <div className="overflow-hidden bg-acento py-3 text-white select-none">
+      <div className="overflow-hidden bg-acento py-3 text-black select-none">
         <div className="animate-marquee-loop flex items-center gap-8 whitespace-nowrap text-sm font-black uppercase tracking-wider">
           {[...TEXTOS_CINTA, ...TEXTOS_CINTA, ...TEXTOS_CINTA].map((texto, i) => (
             <span key={i} className="flex items-center gap-8">
               <span>{texto}</span>
-              <span className="text-xs text-white/60">✦</span>
+              <span className="text-xs text-black/50">✦</span>
             </span>
           ))}
         </div>
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
           <Link
             href="/armar"
-            className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-acento px-8 text-sm font-bold uppercase tracking-wide text-white transition-transform hover:scale-[1.02] active:scale-95"
+            className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-acento px-8 text-sm font-bold uppercase tracking-wide text-black transition-transform hover:scale-[1.02] active:scale-95"
           >
             Ir al armador →
           </Link>

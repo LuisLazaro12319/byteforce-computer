@@ -11,67 +11,105 @@ function IconoWhatsApp() {
   );
 }
 
+const PARA_VOS = [
+  { href: "/productos", texto: "Ofertas" },
+  { href: "/productos", texto: "Computadoras" },
+  { href: "/productos", texto: "Notebooks" },
+  { href: "/productos", texto: "Componentes" },
+];
+
+const ENLACES = [
+  { href: "/armar", texto: "Armá tu PC" },
+  { href: "/productos", texto: "Productos" },
+  { href: "/carrito", texto: "Mi pedido" },
+  { href: "/admin", texto: "Panel" },
+];
+
+// Mapa de ejemplo con la direccion de MARCA. Cuando haya una direccion real,
+// este mismo query la va a ubicar bien sin tocar nada mas.
+const MAPS_QUERY = encodeURIComponent(`${MARCA.direccion}, ${MARCA.ubicacion}`);
+const MAPS_EMBED_SRC = `https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`;
+
 export function Footer() {
   return (
     <footer className="border-t border-borde">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-acento to-[#a8320f] text-sm font-black text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-white to-neutral-400 text-sm font-black text-black">
               BF
             </span>
             <span className="titulo-display text-lg">{MARCA.nombre}</span>
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-tenue">{MARCA.descripcion}</p>
-        </div>
 
-        <div className="text-sm">
-          <h3 className="mb-3 font-medium">Ubicación</h3>
-          <p className="text-tenue">{MARCA.ubicacion}</p>
-          {MARCA.direccion && <p className="text-tenue">{MARCA.direccion}</p>}
-          <p className="mt-3 text-tenue">Envíos a todo el país</p>
-        </div>
+          <dl className="mt-5 space-y-2 text-sm">
+            <div>
+              <dt className="inline text-tenue">Dirección: </dt>
+              <dd className="inline">{MARCA.direccion}, {MARCA.ubicacion}</dd>
+            </div>
+            <div>
+              <dt className="inline text-tenue">Correo: </dt>
+              <dd className="inline">
+                <a href={`mailto:${MARCA.email}`} className="hover:text-foreground">{MARCA.email}</a>
+              </dd>
+            </div>
+            <div>
+              <dt className="inline text-tenue">Cotizá aquí: </dt>
+              <dd className="inline">
+                <a href={linkConsultaGeneral()} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                  {TEL_VISIBLE}
+                </a>
+              </dd>
+            </div>
+          </dl>
 
-        <div className="text-sm">
-          <h3 className="mb-3 font-medium">Navegación</h3>
-          <ul className="space-y-2 text-tenue">
-            <li>
-              <Link href="/armar" className="hover:text-foreground">
-                Armá tu PC
-              </Link>
-            </li>
-            <li>
-              <Link href="/productos" className="hover:text-foreground">
-                Ver productos
-              </Link>
-            </li>
-            <li>
-              <Link href="/carrito" className="hover:text-foreground">
-                Mi pedido
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="text-sm">
-          <h3 className="mb-3 font-medium uppercase tracking-wide">Contacto</h3>
           <a
             href={linkConsultaGeneral()}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`WhatsApp de ${MARCA.nombre}`}
-            className="flex h-11 w-11 items-center justify-center rounded-md border border-borde text-foreground transition-colors hover:border-transparent hover:bg-[#25D366] hover:text-white"
+            className="mt-5 flex h-11 w-11 items-center justify-center rounded-md border border-borde text-foreground transition-colors hover:border-transparent hover:bg-[#25D366] hover:text-white"
           >
             <IconoWhatsApp />
           </a>
-          <a
-            href={linkConsultaGeneral()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 block text-tenue transition-colors hover:text-foreground"
-          >
-            {TEL_VISIBLE}
-          </a>
+        </div>
+
+        <div className="text-sm">
+          <h3 className="mb-3 font-medium">Para vos</h3>
+          <ul className="space-y-2 text-tenue">
+            {PARA_VOS.map((l) => (
+              <li key={l.texto}>
+                <Link href={l.href} className="hover:text-foreground">{l.texto}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="text-sm">
+          <h3 className="mb-3 font-medium">Enlaces</h3>
+          <ul className="space-y-2 text-tenue">
+            {ENLACES.map((l) => (
+              <li key={l.texto}>
+                <Link href={l.href} className="hover:text-foreground">{l.texto}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="mb-3 text-sm font-medium">Ubicación</h3>
+          <div className="overflow-hidden rounded-lg border border-borde">
+            <iframe
+              src={MAPS_EMBED_SRC}
+              width="100%"
+              height="220"
+              style={{ border: 0, filter: "grayscale(1) invert(0.9) contrast(0.9)" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación en el mapa"
+            />
+          </div>
         </div>
       </div>
 

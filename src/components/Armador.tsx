@@ -77,7 +77,7 @@ export function Armador() {
         <button
           type="button"
           onClick={handleAgregar}
-          className="mt-5 w-full rounded-md bg-acento px-6 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          className="mt-5 w-full rounded-md bg-acento px-6 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
         >
           + Agregar armado al pedido
         </button>

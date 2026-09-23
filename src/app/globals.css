@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
-/* Paleta fija oscura + acento naranja gamer. Sin toggle de tema: esta
-   tienda vive siempre en modo oscuro. */
+/* Paleta fija oscura, blanco y negro (sin color de marca). Sin toggle de
+   tema: esta tienda vive siempre en modo oscuro. El acento es blanco, así
+   que todo lo que use bg-acento necesita texto oscuro (text-black) encima. */
 :root {
   --background: #0d0d10;
   --superficie: #17171b;
   --borde: #2a2a30;
   --foreground: #f2f2f0;
   --tenue: #9a9aa2;
-  --acento: #ff5722;
-  --acento-fuerte: #d9481a;
+  --acento: #f2f2f0;
+  --acento-fuerte: #a3a3a8;
   color-scheme: dark;
 }
 

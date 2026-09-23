@@ -83,7 +83,7 @@ export function AdminPanel() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="sticky top-0 z-30 bg-acento px-4 py-2.5 text-center text-sm font-semibold text-white">
+      <div className="sticky top-0 z-30 bg-acento px-4 py-2.5 text-center text-sm font-semibold text-black">
         ℹ️ Vista previa del panel — así lo manejarías vos. La edición en vivo se activa al confirmar tu plan.
       </div>
 
@@ -118,7 +118,7 @@ export function AdminPanel() {
                 key={n.id}
                 onClick={() => setVista(n.id)}
                 className={`shrink-0 rounded-md px-3.5 py-1.5 text-sm font-medium ${
-                  vista === n.id ? "bg-acento text-white" : "border border-borde bg-superficie text-tenue"
+                  vista === n.id ? "bg-acento text-black" : "border border-borde bg-superficie text-tenue"
                 }`}
               >
                 {n.nombre}
@@ -171,10 +171,10 @@ export function AdminPanel() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-gradient-to-br from-acento to-[#a8320f] p-7 text-white">
+              <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-gradient-to-br from-white to-neutral-400 p-7 text-black">
                 <div>
                   <h3 className="text-lg font-bold">¿Te gustaría manejar tu tienda así?</h3>
-                  <p className="mt-1 text-sm text-white/85">
+                  <p className="mt-1 text-sm text-black/70">
                     Activamos el panel real para que edites productos, precios, el armador y el inicio, vos mismo.
                   </p>
                 </div>
@@ -182,7 +182,7 @@ export function AdminPanel() {
                   href={`https://wa.me/${WA_CONTACTO}?text=${encodeURIComponent("Hola! Vi la vista previa del panel de la tienda y quiero saber más")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="shrink-0 rounded-md bg-white px-5 py-3 text-sm font-bold text-acento"
+                  className="shrink-0 rounded-md bg-black px-5 py-3 text-sm font-bold text-white"
                 >
                   💬 Consultar
                 </a>
@@ -212,7 +212,7 @@ export function AdminPanel() {
               <div className="rounded-xl border border-borde bg-superficie p-6">
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <h2 className="text-base font-semibold">Productos cargados</h2>
-                  <span className="cursor-not-allowed rounded-md bg-acento/90 px-3 py-1.5 text-xs font-semibold text-white">
+                  <span className="cursor-not-allowed rounded-md bg-acento/90 px-3 py-1.5 text-xs font-semibold text-black">
                     + Agregar producto
                   </span>
                 </div>
@@ -259,7 +259,7 @@ export function AdminPanel() {
             <div className="rounded-xl border border-borde bg-superficie p-6">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <h2 className="text-base font-semibold">Categorías</h2>
-                <span className="cursor-not-allowed rounded-md bg-acento/90 px-3 py-1.5 text-xs font-semibold text-white">
+                <span className="cursor-not-allowed rounded-md bg-acento/90 px-3 py-1.5 text-xs font-semibold text-black">
                   + Agregar categoría
                 </span>
               </div>
@@ -301,7 +301,7 @@ export function AdminPanel() {
                 <div key={parte.key} className="rounded-xl border border-borde bg-superficie p-6">
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <h2 className="text-base font-semibold">{parte.label}</h2>
-                    <span className="cursor-not-allowed rounded-md bg-acento/90 px-3 py-1.5 text-xs font-semibold text-white">
+                    <span className="cursor-not-allowed rounded-md bg-acento/90 px-3 py-1.5 text-xs font-semibold text-black">
                       + Agregar opción
                     </span>
                   </div>

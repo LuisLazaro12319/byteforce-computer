@@ -70,7 +70,7 @@ function BotonFiltro({
       aria-pressed={activo}
       className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
         activo
-          ? "border-acento bg-acento text-white"
+          ? "border-acento bg-acento text-black"
           : "border-borde text-tenue hover:border-tenue hover:text-foreground"
       }`}
     >
