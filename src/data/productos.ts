@@ -1,8 +1,7 @@
 import type { Categoria, Producto } from "@/lib/types";
 
 /**
- * Catálogo de ejemplo. Precios y specs inventados — reemplazar por el
- * catálogo real del cliente cuando lo tengamos.
+ * Catálogo de ejemplo con imágenes añadidas para demostración.
  */
 export const productos: Producto[] = [
   {
@@ -14,6 +13,7 @@ export const productos: Producto[] = [
     especificaciones: ["AMD Ryzen 3", "8GB RAM DDR4", "SSD 240GB", "Gabinete con fuente incluida"],
     precio: 480000,
     destacado: true,
+    imagen: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "pc-gamer-ryzen5",
@@ -23,6 +23,7 @@ export const productos: Producto[] = [
     especificaciones: ["AMD Ryzen 5 5600", "16GB RAM DDR4", "RTX 3050 8GB", "SSD NVMe 500GB"],
     precio: 950000,
     destacado: true,
+    imagen: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "pc-gamer-i5-4060",
@@ -34,6 +35,7 @@ export const productos: Producto[] = [
     oferta: true,
     precioAnterior: 1450000,
     destacado: true,
+    imagen: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "note-advance",
@@ -42,6 +44,7 @@ export const productos: Producto[] = [
     descripcion: "Liviana y compacta, ideal para trámites, mensajería y trabajo básico.",
     especificaciones: ["Intel Celeron N4500", "8GB RAM", "256GB SSD", "14\" HD"],
     precio: 590000,
+    imagen: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "note-i5-512",
@@ -51,6 +54,7 @@ export const productos: Producto[] = [
     especificaciones: ["Intel Core i5", "8GB RAM", "512GB SSD", "15.6\" Full HD"],
     precio: 820000,
     destacado: true,
+    imagen: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "note-gamer-ryzen7",
@@ -60,6 +64,7 @@ export const productos: Producto[] = [
     especificaciones: ["AMD Ryzen 7", "16GB RAM", "RTX 3050 6GB", "SSD 512GB", "144Hz"],
     precio: 1650000,
     destacado: true,
+    imagen: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "monitor-24-100hz",
@@ -68,6 +73,7 @@ export const productos: Producto[] = [
     descripcion: "Full HD con buena fluidez para uso diario y juegos casuales.",
     especificaciones: ["24\" IPS", "1920x1080", "100Hz", "1ms respuesta"],
     precio: 210000,
+    imagen: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "monitor-27-165hz",
@@ -79,6 +85,7 @@ export const productos: Producto[] = [
     oferta: true,
     precioAnterior: 380000,
     destacado: true,
+    imagen: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "combo-teclado-mouse",
@@ -87,6 +94,7 @@ export const productos: Producto[] = [
     descripcion: "Teclado mecánico y mouse con luces RGB configurables.",
     especificaciones: ["Switches mecánicos", "RGB configurable", "Mouse 6400 DPI"],
     precio: 65000,
+    imagen: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "auricular-71",
@@ -95,6 +103,7 @@ export const productos: Producto[] = [
     descripcion: "Sonido envolvente y micrófono con cancelación de ruido básica.",
     especificaciones: ["Sonido 7.1 virtual", "Micrófono desmontable", "Almohadillas de espuma"],
     precio: 58000,
+    imagen: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "webcam-1080p",
@@ -104,6 +113,7 @@ export const productos: Producto[] = [
     especificaciones: ["1080p 30fps", "Micrófono integrado", "Clip universal"],
     precio: 45000,
     sinStock: true,
+    imagen: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "silla-gamer",
@@ -113,6 +123,7 @@ export const productos: Producto[] = [
     especificaciones: ["Reclinable 90°-160°", "Apoyabrazos 3D", "Base de metal"],
     precio: 280000,
     destacado: true,
+    imagen: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "ssd-nvme-1tb",
@@ -121,6 +132,7 @@ export const productos: Producto[] = [
     descripcion: "Para ampliar almacenamiento o acelerar un equipo con disco rígido.",
     especificaciones: ["1TB", "NVMe PCIe", "Lectura hasta 3500MB/s"],
     precio: 110000,
+    imagen: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=600",
   },
   {
     slug: "memoria-16gb",
@@ -129,6 +141,7 @@ export const productos: Producto[] = [
     descripcion: "Kit de 2x8GB para mejorar la fluidez general del equipo.",
     especificaciones: ["16GB (2x8)", "DDR4 3200MHz"],
     precio: 85000,
+    imagen: "https://images.unsplash.com/photo-1562976540-1502c2145e9f?auto=format&fit=crop&q=80&w=600",
   },
 ];
 
