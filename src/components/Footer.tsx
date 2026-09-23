@@ -36,7 +36,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-white to-neutral-400 text-sm font-black text-black">
+            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-foreground text-sm font-black text-background">
               BF
             </span>
             <span className="titulo-display text-lg">{MARCA.nombre}</span>

@@ -94,7 +94,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
               <button
                 type="button"
                 onClick={handleAgregar}
-                className="rounded-md bg-acento px-7 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+                className="rounded-md bg-acento px-7 py-3.5 text-sm font-semibold text-acento-contraste transition-opacity hover:opacity-90"
               >
                 Agregar — {precio(producto.precio * cantidad)}
               </button>

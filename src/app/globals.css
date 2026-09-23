@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
-/* Paleta fija oscura, blanco y negro (sin color de marca). Sin toggle de
-   tema: esta tienda vive siempre en modo oscuro. El acento es blanco, así
-   que todo lo que use bg-acento necesita texto oscuro (text-black) encima. */
+/* Paleta blanco y negro (sin color de marca), con modo oscuro y modo claro.
+   Oscuro es el tema por defecto; el modo claro es literalmente la
+   inversión y se activa agregando data-theme="light" al <html> (ver
+   ThemeToggle.tsx). --acento-contraste es el color de texto que hay que
+   usar arriba de bg-acento: siempre es el color opuesto al fondo, así que
+   sirve igual en los dos temas sin tener que escribir text-black a mano. */
 :root {
   --background: #0d0d10;
   --superficie: #17171b;
@@ -11,7 +14,20 @@
   --tenue: #9a9aa2;
   --acento: #f2f2f0;
   --acento-fuerte: #a3a3a8;
+  --acento-contraste: #0d0d10;
   color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --background: #ffffff;
+  --superficie: #f4f4f5;
+  --borde: #e3e3e6;
+  --foreground: #0d0d10;
+  --tenue: #6b6b70;
+  --acento: #0d0d10;
+  --acento-fuerte: #3a3a3f;
+  --acento-contraste: #ffffff;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -21,18 +37,16 @@
   --color-foreground: var(--foreground);
   --color-tenue: var(--tenue);
   --color-acento: var(--acento);
+  --color-acento-contraste: var(--acento-contraste);
   --font-sans: var(--font-inter);
   --font-display: var(--font-rajdhani);
-}
-
-html {
-  color-scheme: dark;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
+  transition: background-color .2s ease, color .2s ease;
 }
 
 .titulo-display {

@@ -19,7 +19,7 @@ export function Carrito() {
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             href="/armar"
-            className="inline-flex rounded-md bg-acento px-7 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+            className="inline-flex rounded-md bg-acento px-7 py-3 text-sm font-semibold text-acento-contraste transition-opacity hover:opacity-90"
           >
             Armar mi PC
           </Link>

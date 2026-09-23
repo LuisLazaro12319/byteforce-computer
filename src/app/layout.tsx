@@ -55,6 +55,12 @@ export default function RootLayout({
       className={`${rajdhani.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('byteforce.tema');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}",
+          }}
+        />
         <TiendaProvider>
           <SiteChrome>{children}</SiteChrome>
         </TiendaProvider>

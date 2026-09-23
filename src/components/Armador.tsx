@@ -135,7 +135,7 @@ export function Armador() {
             type="button"
             onClick={handleAgregar}
             disabled={resumen.length === 0}
-            className="mt-4 w-full rounded-md bg-acento px-5 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+            className="mt-4 w-full rounded-md bg-acento px-5 py-3 text-sm font-semibold text-acento-contraste transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
           >
             + Agregar armado al pedido
           </button>
@@ -231,7 +231,7 @@ export function Armador() {
                         type="button"
                         onClick={() => elegir(o.nombre)}
                         className={`rounded-md px-3 py-2 text-xs font-semibold transition-colors ${
-                          elegida ? "bg-acento text-black" : "border border-borde text-foreground hover:border-acento"
+                          elegida ? "bg-acento text-acento-contraste" : "border border-borde text-foreground hover:border-acento"
                         }`}
                       >
                         {elegida ? "✓ Seleccionado" : "Seleccionar +"}
