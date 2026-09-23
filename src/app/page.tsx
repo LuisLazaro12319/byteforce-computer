@@ -15,6 +15,7 @@ const TEXTOS_CINTA = [
 
 export default function Home() {
   const destacados = productos.filter((p) => p.destacado);
+  const pcsArmadas = productos.filter((p) => p.categoria === "computadoras");
 
   return (
     <>
@@ -70,9 +71,12 @@ export default function Home() {
 
       <ComoFunciona />
 
+      {/* PCS ARMADAS: equipos ya armados por la tienda, listos para comprar */}
+      <DestacadosSemana productos={pcsArmadas} titulo="PCs Armadas" verTodoHref="/productos" />
+
       {/* CTA FINAL */}
       <section className="px-4 py-20 sm:px-6">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-borde bg-[radial-gradient(circle_at_50%_0%,rgba(255,87,34,0.18),transparent_60%)] p-10 text-center sm:p-16">
+        <div className="mx-auto max-w-4xl rounded-3xl border border-borde bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12),transparent_60%)] p-10 text-center sm:p-16">
           <h2 className="titulo-display text-3xl sm:text-5xl">¿Necesitás asesoramiento?</h2>
           <p className="mx-auto mt-4 max-w-xl text-tenue">
             Contanos para qué vas a usar la PC y tu presupuesto. Te recomendamos la mejor combinación de piezas.

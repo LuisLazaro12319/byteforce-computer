@@ -5,7 +5,15 @@ import { useRef } from "react";
 import { ProductoCard } from "@/components/ProductoCard";
 import type { Producto } from "@/lib/types";
 
-export function DestacadosSemana({ productos }: { productos: Producto[] }) {
+export function DestacadosSemana({
+  productos,
+  titulo = "Destacados de la semana",
+  verTodoHref = "/productos",
+}: {
+  productos: Producto[];
+  titulo?: string;
+  verTodoHref?: string;
+}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   function mover(direccion: 1 | -1) {
@@ -16,9 +24,9 @@ export function DestacadosSemana({ productos }: { productos: Producto[] }) {
     <section className="border-b border-borde px-4 py-10 sm:px-6">
       <div className="mx-auto max-w-7xl">
         <div className="flex items-end justify-between gap-4 border-b border-borde pb-3">
-          <h2 className="titulo-display text-xl sm:text-2xl">Destacados de la semana</h2>
+          <h2 className="titulo-display text-xl sm:text-2xl">{titulo}</h2>
           <div className="flex shrink-0 items-center gap-3">
-            <Link href="/productos" className="hidden text-xs font-bold uppercase tracking-wider text-tenue transition-colors hover:text-acento sm:inline">
+            <Link href={verTodoHref} className="hidden text-xs font-bold uppercase tracking-wider text-tenue transition-colors hover:text-acento sm:inline">
               Ver todo ↗
             </Link>
             <div className="flex gap-1">
