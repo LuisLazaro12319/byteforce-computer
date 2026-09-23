@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Paleta fija oscura + acento naranja gamer. Sin toggle de tema: esta
+   tienda vive siempre en modo oscuro. */
+:root {
+  --background: #0d0d10;
+  --superficie: #17171b;
+  --borde: #2a2a30;
+  --foreground: #f2f2f0;
+  --tenue: #9a9aa2;
+  --acento: #ff5722;
+  --acento-fuerte: #d9481a;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-superficie: var(--superficie);
+  --color-borde: var(--borde);
+  --color-foreground: var(--foreground);
+  --color-tenue: var(--tenue);
+  --color-acento: var(--acento);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-rajdhani);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+.titulo-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
