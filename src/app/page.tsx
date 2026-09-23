@@ -55,8 +55,8 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.25em] text-acento font-semibold">La más pedida</p>
             <h2 className="titulo-display mt-2 text-3xl sm:text-4xl">Armá tu PC a medida</h2>
             <p className="mt-3 max-w-xl text-tenue">
-              Elegí procesador, placa, memoria, video, almacenamiento, fuente y gabinete. El total se actualiza solo
-              y podés sumarlo directo a tu pedido.
+              Elegí tu plataforma (Intel o AMD) y armá tu equipo paso a paso: procesador, placa, memoria, video,
+              almacenamiento, fuente, gabinete, refrigeración, monitor y periféricos. El total se actualiza solo.
             </p>
           </div>
           <Link

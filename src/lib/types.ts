@@ -21,16 +21,22 @@ export type Producto = {
   sinStock?: boolean;
 };
 
+export type Plataforma = "Intel" | "AMD";
+
 /** Una parte elegible dentro de una categoría del armador (ej. una placa de video puntual). */
 export type OpcionParte = {
   nombre: string;
   precio: number;
+  /** Solo en procesador/placa madre: a qué plataforma pertenece, para filtrar. */
+  plataforma?: Plataforma;
 };
 
 /** Una categoría de pieza del armador (ej. "Procesador"), con sus opciones. */
 export type CategoriaParte = {
   key: string;
   label: string;
+  /** Si true, antes de listar opciones hay que elegir Intel o AMD (filtra las opciones). */
+  requierePlataforma?: boolean;
   opciones: OpcionParte[];
 };
 
